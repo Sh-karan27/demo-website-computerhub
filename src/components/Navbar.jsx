@@ -5,6 +5,8 @@ import { NavList } from '../constants';
 import Logo from '../assets/Logo.png';
 import { MdSunny } from 'react-icons/md';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
+import { IoMdSearch } from 'react-icons/io';
 const Navbar = () => {
   const [slide, setSlide] = useState('justify-start');
   const [smallMenu, setSmallMenu] = useState(false);
@@ -14,16 +16,16 @@ const Navbar = () => {
 
   return (
     <>
-      <section className='w-full flex items-center justify-center relative border'>
+      <section className='w-full flex items-center justify-center relative border-b'>
         <div className='w-full flex items-center justify-between px-5 py-5 max-sm:px-2 max-sm:py-2'>
           <img src={Logo} alt='logo' className='w-[75px]' />
 
           <nav
             className={`flex items-center gap-10 transition-all duration-300 delay-300 ${slide} ease-linear cursor-pointer max-sm:hidden`}>
             {NavList.map((items, i) => (
-              <div key={i}>
+              <NavLink key={i} to={items === 'home' ? '/' : `${items}`}>
                 <span>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
-              </div>
+              </NavLink>
             ))}
 
             <button onClick={() => dispatch(toggleTheme())}>
@@ -40,27 +42,27 @@ const Navbar = () => {
               className='rounded-md bg-transparent border focus:outline-none '
               placeholder='Search'
             />
-            <button>Search</button>
+            <IoMdSearch className='text-2xl' />
           </div>
 
           <div
-            className='flex flex-col w-10 h-10  items-center justify-center gap-1 '
+            className=' cursor-pointer hidden max-sm:flex flex-col w-10 h-10  items-center justify-center gap-1  '
             onClick={() => setSmallMenu(!smallMenu)}>
             <div
-              className={`bg-black w-[30px] h-[3px] ${
+              className={`bg-black w-[30px] h-[2px] ${
                 smallMenu ? 'rotate-45' : ''
-              }`}></div>
+              } ${theme === 'dark' ? 'bg-dark' : 'bg-light'} `}></div>
             <div
-              className={`bg-black w-[30px] h-[3px] ${
+              className={`bg-black w-[30px] h-[2px] ${
                 smallMenu ? '-rotate-45' : ''
-              }`}></div>
+              } ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`}></div>
           </div>
           {smallMenu && (
-            <nav className=' w-full bg-[#000000ad] absolute  top-20 z-30 flex flex-col items-center justify-center gap-10 px-5 py-5'>
+            <nav className=' nav-menu hidden  w-3/4 left-0 glassbox absolute  top-20 z-30  max-sm:flex flex-col items-center justify-center gap-20 px-5 py-5'>
               {NavList.map((items, i) => (
-                <div key={i}>
+                <NavLink key={i} to={items === 'home' ? '/' : `${items}`}>
                   <span>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
-                </div>
+                </NavLink>
               ))}
 
               <button onClick={() => dispatch(toggleTheme())}>

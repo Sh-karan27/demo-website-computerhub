@@ -21,5 +21,31 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.3s, color 0.3;
+  transition: background-color 0.3s linear, color 0.3 linear;
+}
+
+.glassbox {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.067);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(4.5px); */
+  /* -webkit-backdrop-filter: blur(4.5px); */
+}
+
+.bg-dark {
+  background: #3a85cb;
+  transition: 0.3s linear;
+}
+.bg-light {
+  background: #000;
+
+  transition: 0.3s linear;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
