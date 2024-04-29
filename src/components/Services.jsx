@@ -7,17 +7,11 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { services } from '../constants';
 
-
-
-
 const Services = () => {
 
-
-
-
   return (
-    <div className='  w-full flex flex-col items-center justify-center gap-2 mt-20'>
-      <h1 className='text-5xl'>Services We Provide.</h1>
+    <div id='services' className='  w-full flex flex-col items-center justify-center gap-2 mt-20'>
+      <h1 className='text-5xl max-sm:text-3xl'>Services We Provide.</h1>
       <VerticalTimeline>
         {services.map((service, index) => (
           <VerticalTimelineElement

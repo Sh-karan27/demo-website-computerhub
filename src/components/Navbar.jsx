@@ -8,11 +8,16 @@ import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import { IoMdSearch } from 'react-icons/io';
 const Navbar = () => {
-  const [slide, setSlide] = useState('justify-start');
   const [smallMenu, setSmallMenu] = useState(false);
 
   const theme = useSelector((state) => state.theme.value);
   const dispatch = useDispatch();
+  const handleNavClick = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <>
@@ -21,12 +26,12 @@ const Navbar = () => {
           <img src={Logo} alt='logo' className='w-[75px]' />
 
           <nav
-            className={`flex items-center gap-10 transition-all duration-300 delay-300 ${slide} ease-linear cursor-pointer max-sm:hidden`}>
+            className={`flex items-center gap-10 transition-all duration-300 delay-300  ease-linear cursor-pointer max-sm:hidden`}>
             {NavList.map((items, i) => (
-              <NavLink key={i} to={items === 'home' ? '/' : `${items}`}>
-                <span>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
+              <NavLink to="/" key={i} >
+                <span onClick={() => handleNavClick(items)}>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
               </NavLink>
-            ))}
+            ))}0
 
             <button onClick={() => dispatch(toggleTheme())}>
               {theme === 'light' ? (
@@ -36,14 +41,6 @@ const Navbar = () => {
               )}
             </button>
           </nav>
-          {/* <div className='flex items-center justify-center gap-2 max-sm:hidden'>
-            <input
-              type='text'
-              className='rounded-md bg-transparent border focus:outline-none '
-              placeholder='Search'
-            />
-            <IoMdSearch className='text-2xl' />
-          </div> */}
 
           <div
             className=' cursor-pointer hidden max-sm:flex flex-col w-10 h-10  items-center justify-center gap-1  '
@@ -60,18 +57,17 @@ const Navbar = () => {
           {smallMenu && (
             <nav className=' nav-menu hidden  w-3/4 left-0 glassbox absolute  top-20 z-30  max-sm:flex flex-col items-center justify-center gap-20 px-5 py-5'>
               {NavList.map((items, i) => (
-                <NavLink key={i} to={items === 'home' ? '/' : `${items}`}>
-                  <span>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
+                <NavLink key={i} to="/"  className=' cursor-pointer' >
+                  <span onClick={() => handleNavClick(items)}>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
                 </NavLink>
               ))}
 
               <button onClick={() => dispatch(toggleTheme())}>
                 {theme === 'light' ? (
                   <BsFillMoonStarsFill
-                    onClick={() => setSlide('justify-end')}
                   />
                 ) : (
-                  <MdSunny onClick={() => setSlide('justify-start')} />
+                  <MdSunny  />
                 )}
               </button>
             </nav>

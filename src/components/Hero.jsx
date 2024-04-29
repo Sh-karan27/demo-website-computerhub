@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="w-full h-full flex flex-col items-center justify-center ">
+      <section id="home" className="w-full h-full flex flex-col items-center justify-center ">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
