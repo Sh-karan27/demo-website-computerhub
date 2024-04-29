@@ -26,9 +26,9 @@ body {
 
 .glassbox {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.067);
+  background: rgba(253, 252, 252, 0.686);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.908);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
 }

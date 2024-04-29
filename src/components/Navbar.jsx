@@ -36,14 +36,14 @@ const Navbar = () => {
               )}
             </button>
           </nav>
-          <div className='flex items-center justify-center gap-2 max-sm:hidden'>
+          {/* <div className='flex items-center justify-center gap-2 max-sm:hidden'>
             <input
               type='text'
               className='rounded-md bg-transparent border focus:outline-none '
               placeholder='Search'
             />
             <IoMdSearch className='text-2xl' />
-          </div>
+          </div> */}
 
           <div
             className=' cursor-pointer hidden max-sm:flex flex-col w-10 h-10  items-center justify-center gap-1  '

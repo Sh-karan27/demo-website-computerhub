@@ -35,12 +35,12 @@ const Hero = () => {
           className="mySwiper"
         >
           {heroSlider.map((item, i) => (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <div
                 className=" filter h-full w-full bg-cover  bg-center flex items-center justify-center"
                 style={{ backgroundImage: `url(${item.src})` }}
               >
-                <h1 className=" text-5xl text-white z-10 ">
+                <h1 className=" text-5xl text-white z-10 max-sm:text-3xl  ">
                   {item.description}
                 </h1>
               </div>

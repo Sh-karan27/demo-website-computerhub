@@ -13,6 +13,8 @@ import Webscraping from '../assets/Webscraping.png';
 import AIDataAnalytics from '../assets/AIDataAnalytics.png';
 import Research from '../assets/Research.jpeg';
 
+
+
 export const NavList = ['home', 'about', 'services', 'blog', 'shop', 'contact'];
 
 export const heroSlider = [
@@ -84,3 +86,39 @@ export const services = [
     image: Research,
   },
 ];
+
+
+
+export const FeatureArray = [
+  {
+    id: 1,
+    title: "Tech & Software Sales",
+    description: "Everything Tech: From the latest laptops to essential accessories, and software find exactly what you need in one place. Quality, variety, and speedy delivery guaranteed.",
+     
+  },
+  {
+    id: 2,
+    title: "Custom AI and Software Solutions",
+    description: "Empower your business: With tailor-made AI, web applications, software tools, and custom web scraping solutions. Our technology is designed to fit your unique needs, boosting operations and driving forward progress.",
+    
+  },
+  {
+    id: 3,
+    title: "Cloud Services & Flexibility",
+    description: "Access Everywhere: Empower your business with the ability to work and access files from anywhere, securely and effortlessly. Our cloud solutions offer seamless collaboration, complete backups, and the freedom to operate remotely with confidence.",
+    
+  },
+  {
+    id: 4,
+    title: "Quick Repairs",
+    description: "Convenient Service: No need to visit us; we'll come to you. Enjoy hassle-free pick-up and drop-off repair services to keep your tech running smoothly. Fast, efficient, and convenient.",
+    
+  },
+  {
+    id: 5,
+    title: "24/7 Support",
+    description: "Here for Every Issue: Our experts are ready anytime to tackle any tech challenge, from software glitches to setup queries, across all platforms. Friendly, efficient support ensures you're never left stranded. Customer service is at the heart of everything that we do.",
+    
+  }
+];
+

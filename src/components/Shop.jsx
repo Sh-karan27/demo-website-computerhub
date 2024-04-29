@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Shop = () => {
   return <div>Shop</div>;
