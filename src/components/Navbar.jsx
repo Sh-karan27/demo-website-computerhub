@@ -31,13 +31,13 @@ const Navbar = () => {
               <NavLink to="/" key={i} >
                 <span onClick={() => handleNavClick(items)}>{items.toUpperCase().charAt(0) + items.slice(1)}</span>
               </NavLink>
-            ))}0
+            ))}
 
             <button onClick={() => dispatch(toggleTheme())}>
               {theme === 'light' ? (
-                <BsFillMoonStarsFill onClick={() => setSlide('justify-end')} />
+                <BsFillMoonStarsFill  />
               ) : (
-                <MdSunny onClick={() => setSlide('justify-start')} />
+                <MdSunny />
               )}
             </button>
           </nav>
